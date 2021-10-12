@@ -44,9 +44,10 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if (is_numeric($id)) {
-        $updateQuery = "UPDATE todo SET done = IF(done=1, 0, 1) WHERE id = $id;"; // IMPLEMENT ME
+        $updateQuery = ''; // SQL permettant de changer la couleur de la tâche
         if (!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
+
         }
       }
 
@@ -60,7 +61,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if (is_numeric($id)) {
-        $deleteQuery = 'DELETE FROM todo WHERE id =' . $id; // IMPLEMENT ME
+        $deleteQuery = 'DELETE FROM id WHERE id = id'; // SQL permettant de supprimer la tâche
         if (!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
@@ -77,8 +78,8 @@ if (isset($_POST['action'])) {
 /**
  * Select all tasks from the database.
  */
-$selectQuery = 'select * from todo order by id';
-$items = $db->query($selectQuery);
+$selectQuery = 'select * from todo order by id'; 
+$items = $db->query($selectQuery); // SQL permettant d'entrer une nouvelle tâche
 ?>
 
 <html>
